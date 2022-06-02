@@ -1,0 +1,32 @@
+body {
+    font-family: "Montserrat";
+    text-align: center;
+  }
+
+footer{
+    z-index: 10000;
+    color: #fff;
+    background-color: #ff4c68;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 1% 15%;
+    padding-top: 2%;
+}
+footer a{
+    color: #fff;
+    margin: 10px;
+}
+footer a:hover{
+    color: rgb(60, 165, 250);
+}
+footer p{
+    padding-top: 1%;
+}
+.clear{
+    height: 90px;
+    background-color: #fff;
+}

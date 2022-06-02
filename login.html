@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" />
+
+    <title>Sign in and Sign up Form</title>
+    <link rel="stylesheet" href="style/signUp_login.css">
+
+</head>
+<body>
+    <!-- login -->
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="/login" class="sign-in-form" method="POST">
+
+                    <h2 class="title" >Log in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <button class="btn solid" type="submit">Log in</button>
+                    
+                    <h3>New User?</h3>
+                    <a href="signup" role="button" class="new-user">Sign Up</a>
+                </form>
+            </div>
+
+           
+
+        </div>
+
+    </div>
+    
+</body>

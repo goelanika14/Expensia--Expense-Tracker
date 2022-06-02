@@ -1,0 +1,48 @@
+<%- include('_header'); -%>
+
+<section class="track">
+    <div class="row">
+        <div class="col-md-6 sec">
+            <div class="card text-center mx-auto" style="width: 20rem; text-align: left;">
+                
+                <div class="card-body">
+                  <h5 class="card-title">Welcome <span style="font-weight: 600;"><%=User.username%></span></h5>
+                  <p class="card-text"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Total Balance: Rs <%=User.balance%></li>
+                  <li class="list-group-item">Total Credit: Rs <%=User.totalCredit%></li>
+                  <li class="list-group-item">Total Debit: Rs <%=User.totalDebit%></li>
+                </ul>
+                <div class="card-body">
+                  <a class="btn btn-outline-danger" role="button" href="target">Set Your Financial Target</a>
+                    <!-- <button class="btn btn-lg btn-outline-danger" type="submit">Set Your Financial Target</button> -->
+                  
+                </div>
+              </div>
+
+        </div>
+        <div class="col-md-6 sec">
+            <a href="income" class="btn btn-item btn-danger btn-lg btn-top" type="button">Add Income/Expense</a> <br>
+            <a href="history" class="btn btn-item btn-danger btn-lg" type="button">Cashflow</a> <br>
+          <a href="charts" class="btn btn-item btn-danger btn-lg" type="button">Charts</a> <br>
+          
+        
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<%- include('_footer'); -%>

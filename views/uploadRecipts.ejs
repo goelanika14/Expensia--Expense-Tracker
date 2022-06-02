@@ -1,0 +1,49 @@
+<%- include('_header'); -%>
+
+<div class="row">
+
+    <div class="col-lg-6">
+        <form method="post" action="/addnewRecipts" class="mx-auto" style="width: 300px;" enctype="multipart/form-data">
+            <label for="imgtitle" class="upload-lable">Recipt Title</label>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="imgtitle" name="imgtitle" placeholder="Image Title"
+                    autocomplete="off" required>
+            </div>
+            <div class="my-3">
+                <label for="desc" class="upload-lable">Recipt Description</label>
+                <textarea class="form-control" style="width: 300px;" id="desc" name="desc" value="" rows="3"
+                    placeholder="Description" required>
+            </textarea>
+            </div>
+            <div class="form-group">
+                <label for="image" class="upload-lable">Choose Recipt</label>
+                <input type="file" id="image" name="image" class="form-control-file" required>
+            </div>
+            <div class="my-3">
+                <button type="submit" class="btn btn-danger">Upload</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-6">
+        <h5 class="urecipts">Uploaded Recipts</h5>
+
+        <div>
+            <% items.forEach(function(image) { %>
+                <%if(image.userid == User._id){%>
+                <div class="row recipts">
+                    <div class="col-lg-12">
+                       <img style="width: 200px; margin: 5px auto;" src="uploads/<%=image.img%>" alt="Recipt Image">
+                        <div>
+                            <h6 class="recipt-title"><%= image.name %></h6>
+                            <p class="recipt-desc"><%= image.desc %></p>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                <% }); %>
+        </div> 
+    </div>
+</div>
+
+<div style="height: 200px;"></div>
+<%- include('_footer'); -%>

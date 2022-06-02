@@ -1,0 +1,191 @@
+<%- include('_header'); -%>
+
+    <div class="row">
+        <div class="col-lg-4 tar">
+            <form method="post" action="/setTarget" class="mx-auto" style="width: 300px;">
+
+                <div class="my-3">
+                    <input type="number" class="form-control" name="ProjectedIncome" id="ProjectedIncome"
+                        placeholder="Projected Income" autocomplete="off" required>
+                </div>
+                <div class="my-3">
+                    <input type="number" class="form-control" name="TGroceryExpense" id="TGroceryExpense"
+                        placeholder="Target Grocery Expense" autocomplete="off" required>
+                </div>
+                <div class="my-3">
+                    <input type="number" class="form-control" name="TTransportationExpense"
+                        placeholder="Target Transportation Expense" autocomplete="off" required>
+                </div>
+                <div class="my-3">
+                    <input type="number" class="form-control" name="TEducationExpense"
+                        placeholder="Target Education Expense" autocomplete="off" required>
+                </div>
+                <div class="my-3">
+                    <input type="number" class="form-control" name="TOtherExpense" placeholder="Target Other Expense"
+                    autocomplete="off" required>
+                </div>
+                
+                <div class="my-3">
+                    <button type="submit" class="btn btn-danger">Set/Update Target</button>
+                </div>
+            </form>
+            
+        </form>
+    </div>
+    
+    
+    <!-- chart -->
+    
+    <div class="col-lg-8">
+        <div class="row">
+            
+                <div class="col-lg-6">
+                    <div class="chartBoxtarget">
+                        <canvas id="targetchart"></canvas>
+                    </div>
+                    <div style="display: none;">
+                        <h6 id="xincome">
+                            <%=User.xincome%>
+                        </h6>
+                        <h6 id="xgrocery">
+                            <%=User.xgrocery%>
+                        </h6>
+                        <h6 id="xtranspartation">
+                            <%=User.xtranspartation%>
+                        </h6>
+                        <h6 id="xeducation">
+                            <%=User.xeducation%>
+                        </h6>
+                        <h6 id="xother">
+                            <%=User.xother%>
+                        </h6>
+                        <h6 id="xsavings">
+                            <%=User.xsavings%>
+                        </h6>
+                    </div>
+                    <script>
+                        var xincome = document.getElementById("xincome").innerHTML;
+                        var xgrocery = document.getElementById("xgrocery").innerHTML;
+                        var xtranspartation = document.getElementById("xtranspartation").innerHTML;
+                        var xeducation = document.getElementById("xeducation").innerHTML;
+                        var xother = document.getElementById("xother").innerHTML;
+                        var xsavings = document.getElementById("xsavings").innerHTML;
+                        
+                        var ctx = document.getElementById('targetchart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Projected Income', 'Target Grocery Expense', 'Target Transportation Expense', 'Target Education Expense', 'Target Other Expense', 'Savings'],
+                                datasets: [{
+                                    label: 'Financial Target',
+                                    data: [xincome, xgrocery, xtranspartation, xeducation, xother, xsavings],
+                                    backgroundColor: [
+                                        'rgba(743, 33, 192, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(255, 99, 13, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(743, 33, 192, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(255, 99, 13, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        </script>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="chartBoxtarget">
+                        <canvas id="targetchart2"></canvas>
+                    </div>
+                    <div style="display: none;">
+                        <h6 id="xincome">
+                            <%=User.xincome%>
+                        </h6>
+                        <h6 id="xgrocery">
+                            <%=User.xgrocery%>
+                        </h6>
+                        <h6 id="xtranspartation">
+                            <%=User.xtranspartation%>
+                        </h6>
+                        <h6 id="xeducation">
+                            <%=User.xeducation%>
+                        </h6>
+                        <h6 id="xother">
+                            <%=User.xother%>
+                        </h6>
+                        <h6 id="xsavings">
+                            <%=User.xsavings%>
+                        </h6>
+                    </div>
+                    <script>
+                        var xincome = document.getElementById("xincome").innerHTML;
+                        var xsavings = document.getElementById("xsavings").innerHTML;
+                        
+                        var ctx = document.getElementById('targetchart2').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Projected Income', 'Target Savings'],
+                                datasets: [{
+                                    label: 'Financial Target',
+                                    data: [xincome, xsavings],
+                                    backgroundColor: [
+                                        'rgba(743, 33, 192, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(255, 99, 13, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(743, 33, 192, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(255, 99, 13, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                        
+                        </script>
+                </div>
+            </div>
+            <h5>Previous Set Targets</h5>
+        </div>
+        
+
+    </div>
+    
+
+    <div style="height: 100px;">
+        
+    </div>
+    
+    <%- include('_footer'); -%>

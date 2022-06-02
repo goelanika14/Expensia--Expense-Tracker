@@ -1,0 +1,159 @@
+body{
+    background-color: #ffffff0c;
+}
+
+.navbar-light .navbar-brand {
+    color: #ff4c68;
+}
+.navbar-light .navbar-brand:hover {
+    color: #ff4c68;
+   
+}
+.heading{
+    font-family: Ubuntu;
+    font-weight: 600;
+}
+
+.navbar{
+padding-bottom: 70px;
+}
+
+.container-fluid{
+    padding: 3% 15%;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #ff4c68;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    color: #ff4c68;
+}
+
+.sec{
+    text-align: center;
+}
+.btn-item{
+    margin: 10px;
+    width: 280px;
+}
+
+.btn-outline-danger {
+    color: #ff4c68;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ff4c68;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #ff4c68;
+    border-color: #ff4c68;
+}
+.btn-outline-danger:hover {
+    color: #fff;
+    background-color: #ff4c68;
+    background-image: none;
+    border-color: #ff4c68;
+}
+@media screen and (min-width: 970px) {
+    
+    .card{
+        position: relative;
+        left: 18px;
+    }
+    
+    .btn-item{
+        position: relative;
+        right: 45px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .btn-top{
+        margin-top: 80px;
+    }
+    .bal{
+        margin: 50px 0px;
+    }
+    .urecipts{
+        margin-top: 50px;
+    }
+}
+
+  .income-expense-input{
+      width: 300px;
+  }
+
+  .recipt{
+      text-align: left;
+  }
+
+  .bal{
+      width: 300px;
+      text-align: center;
+  }
+
+  .chartBox{
+      width: 350px;
+      padding: 2%;
+  }
+  .chartBoxtarget{
+      width: 350px;
+    padding: 2%;
+  }
+
+  
+  /* @media screen and (min-width: 1000px) {
+    .tar{
+        position: relative;
+        left: 150px;
+    }
+} */
+
+h3,h5{
+    font-family: Ubuntu;
+    color: #ff4c68;
+    font-weight: 500;
+    padding: 2%;
+}
+h5{
+    text-decoration: underline;
+}
+
+.upload-lable{
+    font-family: Ubuntu;
+    color: #ff4c68;
+    font-weight: 500;
+}
+
+.urecipts{
+    font-family: Ubuntu;
+    color: #ff4c68;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.recipts{
+    padding: 2%;
+}
+
+.recipt-title{
+    font-family: Ubuntu;
+    color: #000000;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.recipt-desc{
+    font-family: Ubuntu;
+    color: #00000080;
+    font-weight: 300;
+    font-size: 90%;
+}
+
+.chart1{
+    width: 400px;
+}
+
+.chart{
+    padding: 4%;
+}

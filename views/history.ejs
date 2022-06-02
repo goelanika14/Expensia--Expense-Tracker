@@ -1,0 +1,68 @@
+<%- include('_header'); -%>
+    <button class="btn btn-outline-danger" onclick="downloadHistory()">Download</button>
+
+    <div class="container" id="transactionHistory">
+        <h3 style="color: #ff4c68; font-weight: 600; text-decoration: underline;">Transaction History</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Mode</th>
+                    <th scope="col">Note</th>
+                    <th scope="col" style="width: 200px;">Date</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                
+                <%var j=0;%>
+                <%for(var i=0; i < transactions.length;i++){%>
+                <%if(transactions[i].userid==User._id){ j++;%>
+                    <tr>
+                        <th scope="row">
+                            <%=j%>
+                        </th>
+                        <td>
+                            <%=transactions[i].flow%>
+                        </td>
+                        <td>
+                            <%=transactions[i].amount%>
+                        </td>
+                        <td>
+                            <%=transactions[i].category%>
+                        </td>
+                        <td>
+                            <%=transactions[i].mode%>
+                        </td>
+                        <td>
+                            <%=transactions[i].note%>
+                        </td>
+                        <td>
+                            <%=transactions[i].createdAt%>
+                        </td>
+                    </tr>
+                    
+                    <%}%>
+                    <%}%>
+                </tbody>
+            </table>
+            <%if(j==0){%>
+                <h4>No Transactions</h4>
+                <%}%>
+            </div>
+
+            <div style="height: 200px;"></div>
+
+            <script>
+                function downloadHistory() {
+                    console.log("initiated");
+                    const element = document.getElementById("transactionHistory");
+                    html2pdf()
+                        .from(element)
+                        .save();
+                }
+            </script>
+            <%- include('_footer'); -%>
